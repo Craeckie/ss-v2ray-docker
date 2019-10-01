@@ -1,4 +1,4 @@
-FROM shadowsocks/shadowsocks-libev:v3.3.1
+FROM shadowsocks/shadowsocks-libev
 
 ENV V2RAY_PLUGIN_VERSION v1.1.0
 ENV HOST        mydomain.me
@@ -31,3 +31,5 @@ CMD exec ss-server \
       --plugin $OBFS_PLUGIN \
       --plugin-opts $OBFS_OPTS \
       $ARGS
+
+EXPOSE $SERVER_PORT
